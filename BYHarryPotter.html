@@ -1,0 +1,133 @@
+<!--
+ (1) HTML with doctype
+ (1) Title: Harry Potter
+ (1) Header: Harry Potter Movies
+ (1) Paragraph: to the wizarding...
+ (1) List: navigation bar
+ (4) Table: Harry Potter Movies
+ (1) Hyperlink: images link to outside sources
+ (1) Image hyperlink: movie covers
+ (2) alt tags: alt="Movie cover of Harry Potter and the Chamber of Secrets"
+ (1) Text format: strong <strong>Harry Potter</strong>
+ (1) Special entity: copyright
+ (4) Nav bar: HPatSS HPatCoS ...
+ (2) Tooltips: display when hover
+ (4) Div with image + text: Hogwarts castle and welcome text
+ (2) Styled div: div id="welcome" oblique font style
+
+ CSS requirements:
+ (1) CSS file: BYHarryPotter.css
+ (2) Comments for each main section : main nav bar, tooltips, table,.....
+ (5) Nav bar style. Home is on the right. I have background
+ colors for the entire nav bar and the list items and text color is changed.
+
+ (3) Tooltips style. Mine have grey background, white text,
+ rounded edges.
+
+ (4) Table style. The border is 2px and solid black,
+ collapsed so no double border. The header has a
+ contrasting blue background with white text. Table data are centered
+ horizontally and with a grey background
+
+ (2) Div with image/text. Image is floated right, text is floated left
+
+ Font options (at least 4)
+ 1) welcome paragraph uses oblique font-style
+ 2) instructions are bolded font-weight
+ 3) text in table header is colored white
+ 4) text in nav bar is colored white
+
+ (2) Differently styled div. div id instructions has dotted border
+
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!--METADATA-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="author" content="Brian Yoon"/>
+  <meta name="description" content="Facts about the wizarding world of Harry Potter"/>
+  <title>Harry Potter</title>
+  <link rel="stylesheet" type="text/css" href="BYHarryPotter.css">
+</head>
+
+<body>
+  <header>
+    <ul id="main_navigation">
+      <li>
+        <div class="tooltip">
+          <button onclick="window.location='#HPatSS';">HPatSS</button>
+          <span class="tooltiptext">Harry Potter and the Sorcerer's Stone</span>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip">
+          <button onclick="window.location='#HPatCoS';">HPatCoS</button>
+          <span class="tooltiptext">Harry Potter and the Chamber of Secrets</span>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip">
+          <button onclick="window.location='#HPatPoA';">HPatPoA</button>
+          <span class="tooltiptext">Harry Potter and the Prisoner of Azkaban</span>
+        </div>
+      </li>
+      <div>
+      <li id="home">
+        <button onclick="window.location='#Home';">Home</button>
+      </li>
+    </div>
+    </ul>
+    <h1>Harry Potter Movies</h1>
+  </header>
+  <main>
+    <div id="welcome">
+      <img src="https://i.imgur.com/IMmxrr1.jpg" alt="Rendering of Hogwarts Castle from a distance with three figures standing and looking out.">
+      <h2>Welcome</h2>
+      <p>
+        to the wizarding world of <strong>Harry Potter</strong> movies. This page is
+        inspired by the recent release of all <strong>Harry Potter</strong> movies by HBO.
+      </p>
+    </div>
+    <div id="instructions">
+      <h2>Instructions</h2>
+      <p>
+        Click on navigation buttons to go to one of the first three movies on this page.
+        Click on the photo of each movie to go to the IMDB page for that movie.
+      </p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Release Year</th>
+          <th>Cover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="HPatSS">Harry Potter and the Sorcerer's Stone</td>
+          <td>2001</td>
+          <td><a href="http://www.imdb.com/title/tt0241527/?ref_=ttls_li_tt">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_UX182_CR0,0,182,268_AL_" alt="Movie cover of Harry Potter and the Sorcerer's Stone">
+          </a><p>&copy;WB Productions</p></td>
+        </tr>
+        <tr>
+          <td id="HPatCoS">Harry Potter and the Chamber of Secrets</td>
+          <td>2002</td>
+          <td><a href="http://www.imdb.com/title/tt0295297/?ref_=ttls_li_tt">
+            <img src="BROKENLINK" alt="Movie cover of Harry Potter and the Chamber of Secrets">
+          </a><p>&copy;WB Productions</p></td>
+        </tr>
+        <tr>
+          <td id="HPatPoA">Harry Potter and the Prisoner of Azkaban</td>
+          <td>2004</td>
+          <td><a href="http://www.imdb.com/title/tt0304141/?ref_=ttls_li_tt">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_UY209_CR0,0,140,209_AL_" alt="Movie cover of Harry Potter and the Prisoner of Azkaban">
+          </a><p>&copy;WB Productions</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>

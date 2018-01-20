@@ -1,0 +1,94 @@
+/* tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* navigation bar styles */
+ul#main_navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: black;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+ul#main_navigation li#home {
+  float: right;
+}
+ul#main_navigation li {
+  float: left;
+}
+button {
+  color: white;
+  background-color: black;
+  width: 200px;
+  height: 50px;
+}
+
+/* table styles */
+table {
+  margin-left: 50px;
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  overflow: auto;
+  max-width: 100%;
+}
+th {
+  background-color: blue;
+  color: white;
+}
+tr {
+  max-width: 100%;
+  background-color: grey;
+}
+td {
+  border: 2px solid black;
+}
+
+/* div with image & text */
+div#welcome img{
+  float: right;
+}
+div#welcome p{
+  float: left;
+  font-style: oblique;
+}
+div#welcome h2{
+  float: left;
+}
+div#welcome {
+  clear: both;
+  overflow: auto;
+}
+
+/* all images */
+img {
+  max-height: 500px;
+}
+
+div#instructions {
+  border: 1px dotted black;
+  padding: 10px;
+  margin: 10px 0px;
+  font-weight: bold
+}
