@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!--METADATA-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="author" content="Brian Yoon"/>
+  <meta name="description" content="Form"/>
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="BYForm.css">
+</head>
+
+<body>
+  <header>
+    <ul id="main_navigation">
+      <li>
+        <button onclick="window.location='#';">Home</button>
+      </li>
+      <li>
+        <button onclick="window.location='#';">Profile</button>
+      </li>
+      <li id="icon">
+        <img src="" alt="icon">
+      </li>
+    </div>
+    </ul>
+  </header>
+	<div class="flex-container">
+		<div id="left">
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/739004-200.png"><br>
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/739000-200.png"><br>
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/738993-200.png"><br>
+		</div>
+
+	  <div id="form">
+	  	<form>
+		  	<fieldset id="personal_info">
+		  	  <legend>Personal Info</legend>
+		  	  First Name: <input type="text" name="firstname" value="first" size="20"><br>
+		  	  Last Name: <input type="text" name="lastname" value="last" size="20"><br>
+		  	  Height: <input type="number" name="height" min="0" max="8">ft <input type="number" name="height" min="0" max="11">in<br>
+		  	  Age: <input type="range" name="age" min="18" max="100" onchange="document.getElementById('age').value=value;">
+		  	  		 <input type="text" id="age" value="59" readonly><br>
+		  	  Gender: <input type="radio" name="gender" value="male" checked>Male<br>
+			  					<input type="radio" name="gender" value="female">Female<br>
+			  					<input type="radio" name="gender" value="other">Other<br>
+		  		Tribe: 	<input type="checkbox" name="bear" value="bear" checked>Bear<br>
+						  		<input type="checkbox" name="bear" value="otter">Otter<br>
+						  		<input type="checkbox" name="bear" value="twink">Twink<br>
+						  		<input type="checkbox" name="bear" value="twunk">Twunk<br>
+							  	<input type="checkbox" name="bear" value="wolf">Wolf<br>
+				</fieldset>
+				<fieldset id="preferences">
+		  	  <legend>Preferences</legend>
+		  	  Number of Times:
+			  	  <select name="number">
+						  <option value="once">Once</option>
+						  <option value="twice">Twice</option>
+						  <option value="thrice">Thrice</option>
+						  <option value="fries">Fries</option>
+						  <option value="five">Five Guys</option>
+						  <option value="size">Size</option>
+						  <option value="medium">Medium</option>
+						  <option value="grande">Grande</option>
+						</select><br>
+					Allowable Tribes:
+						<select name="tribes" size="5" multiple>
+						  <option value="bear">bear</option>
+						  <option value="otter">otter</option>
+						  <option value="twink">twink</option>
+						  <option value="twunk">twunk</option>
+						  <option value="wolf">wolf</option>
+						</select><br>
+					Description: <input type="text" name="description" value="about me"><br>
+				</fieldset>
+				<button id="submit">Submit</button>
+				<input type="reset">
+	  	</form>
+	  </div>
+
+		<div id="right">
+			<a href="https://www.urbandictionary.com/define.php?term=bear">Bear</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=otter">Otter</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=twink">Twink</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=twunk">Twunk</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=wolf">Wolf</a><br>
+		</div>
+	</div>
+</body>
