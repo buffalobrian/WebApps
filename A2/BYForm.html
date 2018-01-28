@@ -1,0 +1,183 @@
+
+<!--
+HTML
+(3) Nav bar: Home, Profile, bleach logo at right
+
+Sections
+(4) Two sides: Totem pole of animals, and links to each definition of tribe
+(2) Bottom area: Full images of each animal
+
+Form requirements (middle section)
+(4) First/Last name: first last default, size 20
+(4) Two new input types: Age (slider) and Height (input range)
+(3) Radio buttons for Gender: male selected
+(3) Checkboxes for tribe: Bear is selected
+(2) Fieldsets used for Personal Info and Preferences
+(2) Dropdown for Number of Times and Once is selected (this is a random-ish section)
+(1) Multiple item dropbox for Allowable Tribes
+(2) Text area for description, default is "about me"
+(1) Submit with no action
+(1) Reset buttons - does reset
+
+CSS
+(3) Flex for at least 3 divs (several areas: all main sections (left right & form), each item in the form, icons on left, links on right,
+footer with images
+
+(4) justify-content options:
+- center for main three sections
+- space-around for all form sections
+- space-between for left area (totem pole)
+- align-items with center for left field
+
+(2) Flex Column-reverse layout used for left and right sections, row used for
+all others.
+
+(2) Flex-wrap with overflow hidden used for main three sections
+
+(3) Nav buttons transition from magenta to white
+(1) Nav buttons have cursor pointer
+(1) Buttons are magenta with no border, text is white
+(2) Logo is right justified
+(1) Logo has no overflow and inherits height
+
+(2) Images are styled with yellow borders
+Used object-fit: contain to maintain aspect ratio
+
+(5) Basic CSS used (at least 5):
+background-color
+color
+border
+padding
+margin
+text-transform
+font-size
+height
+width
+max-width
+
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!--METADATA-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="author" content="Brian Yoon"/>
+  <meta name="description" content="Form"/>
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="BYForm.css">
+</head>
+
+<body>
+  <header>
+    <ul id="main_navigation">
+      <li>
+        <button onclick="window.location='#';">Home</button>
+      </li>
+      <li>
+        <button onclick="window.location='#';">Profile</button>
+      </li>
+      <li id="icon">
+        <img src="https://orig00.deviantart.net/fc29/f/2012/078/0/9/bleach_logo_icon_by_leatelamon-d4t90f2.png" alt="icon">
+      </li>
+    </div>
+    </ul>
+  </header>
+	<div class="flex-container">
+		<div id="left" class="flex-column">
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/739004-200.png"><br>
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/739000-200.png"><br>
+			<img class="icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/738993-200.png"><br>
+		</div>
+
+	  <div id="form">
+	  	<form>
+		  	<fieldset id="personal_info">
+		  	  <legend>Personal Info</legend>
+          <div class="flex-left">
+		  	    <p>First Name:</p> <input type="text" name="firstname" value="first" size="20">
+          </div>
+          <div class="flex-left">
+		  	    <p>Last Name:</p> <input type="text" name="lastname" value="last" size="20">
+          </div>
+          <div class="flex-left">
+  		  	  <p>Height:</p> <div><input type="number" name="height" min="0" max="8">ft <input type="number" name="height" min="0" max="11">in</div>
+          </div>
+          <div class="flex-left">
+  		  	  <p>Age:</p> <div>
+              <input type="range" name="age" min="18" max="100" onchange="document.getElementById('age').value=value;"><br>
+  		  	  	<input type="text" id="age" value="59" readonly>
+            </div>
+          </div><br>
+          <div class="flex-left">
+  		  	  <p>Gender:</p><div>
+              <input type="radio" id="male" name="gender" value="male" checked><label for="male">Male</label><br>
+  			  		<input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><br>
+  			  		<input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br>
+            </div>
+          </div><br>
+          <div class="flex-left">
+  		  		<p>Tribe:</p><div>
+              <input type="checkbox" id="bear" name="bear" value="bear" checked><label for="bear">Bear</label><br>
+				  		<input type="checkbox" id="otter" name="otter" value="otter"><label for="otter">Otter</label><br>
+				  		<input type="checkbox" id="twink" name="twink" value="twink"><label for="twink">Twink</label><br>
+				  		<input type="checkbox" id="twunk" name="twunk" value="twunk"><label for="twunk">Twunk</label><br>
+					  	<input type="checkbox" id="wolf" name="wolf" value="wolf"><label for="wolf">Wolf</label><br>
+            </div>
+          </div>
+				</fieldset>
+				<fieldset id="preferences">
+		  	  <legend>Preferences</legend>
+          <div class="flex-left">
+  		  	  <p>Number of Times:</p>
+            <div>
+  			  	  <select name="number">
+  						  <option value="once">Once</option>
+  						  <option value="twice">Twice</option>
+  						  <option value="thrice">Thrice</option>
+  						  <option value="fries">Fries</option>
+  						  <option value="five">Five Guys</option>
+  						  <option value="size">Size</option>
+  						  <option value="medium">Medium</option>
+  						  <option value="grande">Grande</option>
+  						</select>
+            </div>
+          </div>
+          <div class="flex-left">
+					  <p>Allowable Tribes:</p>
+            <div>
+  						<select name="tribes" size="5" multiple>
+  						  <option value="bear">bear</option>
+  						  <option value="otter">otter</option>
+  						  <option value="twink">twink</option>
+  						  <option value="twunk">twunk</option>
+  						  <option value="wolf">wolf</option>
+  						</select>
+            </div>
+          </div>
+          <div class="flex-left">
+					   <p>Description:</p> <input type="text" name="description" value="about me">
+          </div>
+				</fieldset>
+				<button id="submit">Submit</button>
+				<input type="reset">
+	  	</form>
+	  </div>
+
+		<div id="right" class="flex-column">
+			<a href="https://www.urbandictionary.com/define.php?term=bear">Bear</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=otter">Otter</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=twink">Twink</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=twunk">Twunk</a><br>
+			<a href="https://www.urbandictionary.com/define.php?term=wolf">Wolf</a><br>
+		</div>
+	</div>
+
+  <footer class="flex-container">
+    <img src="https://cdn.pixabay.com/photo/2017/02/19/13/01/bear-2079672_960_720.png">
+    <img src="https://cdn.pixabay.com/photo/2017/01/31/22/16/animals-2027666_960_720.png">
+    <img src="https://cdn.pixabay.com/photo/2017/01/31/13/21/animal-2023971_960_720.png">
+  </footer>
+
+</body>
