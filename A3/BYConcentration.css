@@ -1,0 +1,48 @@
+
+
+.flex-container {
+  display : flex;
+  justify-content : center;
+  flex-wrap : wrap;
+  overflow : hidden;
+}
+
+#middle {
+  display : flex;
+  flex-wrap : wrap;
+  width : 50%;
+}
+#middle img{
+  padding-bottom : 2%;
+  width : 25%;
+  height : 20vh;
+}
+
+#left {
+  width: 20%;
+  background-color: blue;
+}
+#left::after {
+  display : flex;
+  flex-wrap : wrap;
+}
+#left img {
+  max-width : 50%;
+  height : 20vh;
+}
+#right::after {
+  display : flex;
+  flex-wrap : wrap;
+}
+#right img {
+  max-width : 50%;
+  height : 20vh;
+}
+#right {
+  width: 20%;
+  background-color: red;
+}
+
+img {
+  object-fit: contain;
+}
