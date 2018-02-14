@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+  var aquaSquare = { theColor: "#00FFFF", theName: "Aqua"};
+  var blueSquare = { theColor: "#0000FF", theName: "Blue"};
+  var coralSquare = { theColor: "#FF7F50", theName: "Coral"};
+  var crimsonSquare = { theColor: "#DC143C", theName: "Crimson"};
+  var magentaSquare = { theColor: "#8B008B", theName: "Dark Magenta"};
+  var fuschiaSquare = { theColor: "#FF00FF", theName: "Fuchsia"};
+  var goldSquare = { theColor: "#FFD700", theName: "Gold"};
+  var seaGreenSquare = { theColor: "#20B2AA", theName: "Light Sea Green"};
+
+  class Card extends React.Component {
+    render() {
+      var CardStyle = {
+        boxShadow: "5px 5px 2px black",
+        width: "20vw",
+        margin: "2vw",
+        backgroundColor: this.props.background
+      };
+
+      return (
+        <div style={CardStyle}>
+          <Colorbox color={this.props.color1}></Colorbox>
+          <Colorbox color={this.props.color2}></Colorbox>
+          <Button>Pick Us!</Button>
+        </div>
+      );
+    }
+  }
+
+  class Colorbox extends React.Component {
+    render() {
+      var ColorboxStyle = {
+        backgroundColor: this.props.color.theColor,
+        boxShadow: "inherit",
+        color: "white",
+        font: "18px arial, sans-serif",
+        textAlign: "center",
+        padding: "5%",
+        width: "80%",
+        height: 100,
+        margin: "5%"
+      };
+
+      return (
+        <div style={ColorboxStyle}>
+          {this.props.color.theName}
+        </div>
+      )
+    }
+  }
+
+  class Button extends React.Component {
+    render() {
+      var ButtonStyle = {
+        marginBottom: 15,
+        marginLeft: "30%",
+        width: "40%",
+        boxShadow: "inherit"
+      };
+
+      return (
+        <button style={ButtonStyle}>{this.props.children}</button>
+      )
+    }
+  }
+
+  var outerStyle = {
+    display:"flex",
+    flexDirection: "row"
+  };
+
+  ReactDOM.render(
+    <div style={outerStyle}>
+      <Card color1={aquaSquare} color2={blueSquare} background="#aaaaaa"></Card>
+      <Card color1={coralSquare} color2={crimsonSquare} background="#999999"></Card>
+      <Card color1={magentaSquare} color2={fuschiaSquare} background="#888888"></Card>
+      <Card color1={goldSquare} color2={seaGreenSquare} background="#777777"></Card>
+    </div>,
+    document.querySelector("#container")
+  );
+  </script>
+</body>
+
+</html>
