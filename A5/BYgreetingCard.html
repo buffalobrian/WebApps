@@ -1,90 +1,12 @@
-<!--<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Dealing with State</title>
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-</head>
-
-<body>
-  <div id="container"></div>
-
-  <script type="text/babel">
-    class LightningCounter extends React.Component {
-      constructor(props, context) {
-        super(props, context);
-
-        this.state = {
-          strikes: 0
-        };
-
-        this.timerTick = this.timerTick.bind(this);
-      }
-
-      componentDidMount() {
-        setInterval(this.timerTick, 1000); // Calls timerTick function every 1000ms
-      }
-
-      timerTick() {
-        this.setState({
-          strikes: this.state.strikes + 100
-        });
-      }
-
-      render() {
-        return (
-          <h1>{this.state.strikes}</h1>
-        );
-      }
-    }
-
-    class LightningCounterDisplay extends React.Component {
-      render() {
-        var divStyle = {
-          width: 250,
-          textAlign: "center",
-          backgroundColor: "black",
-          padding: 40,
-          fontFamily: "sans-serif",
-          color: "#999",
-          borderRadius: 10
-        };
-
-        return (
-          <div style={divStyle}>
-            <LightningCounter/>
-          </div>
-        );
-      }
-    }
-
-    ReactDOM.render(
-      <LightningCounterDisplay/>,
-      document.querySelector("#container")
-    );
-  </script>
-</body>
-
-</html>-->
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>From Data to UI</title>
+  <title>Cool Custom Card Craft Creations</title>
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
-  <style>
-    #container {
-      padding: 50px;
-      background-color: #FFF;
-    }
-  </style>
 </head>
 
 <body>
@@ -92,9 +14,54 @@
 
   <script type="text/babel">
   //<span style="display:block;line-height:8px; font-size: 8px; font-weight:bold;white-space:pre;font-family: monospace;color: black; background: white;">
-  class Ascii extends React.Component {
+  class CardCreator extends React.Component {
+	constructor(props, context) {
+		super(props, context);
+
+        this.state = {
+          background: "white",
+		  text: "black",
+		  toWho: "Tyler",
+		  fromWho: "Sarah" 
+        };
+
+        this.changeBackground = this.changeBackground.bind(this);
+		this.changeText = this.changeText.bind(this);
+		this.updateTo = this.updateTo.bind(this);
+		this.updateFrom = this.updateFrom.bind(this);
+	}
+	
+	changeBackground(e) {
+		this.setState({
+			background: e.target.value
+		});
+	}
+	
+	changeText(e) {
+		this.setState({
+			text: e.target.value
+		});
+	}
+	
+	updateTo(e) {
+		if(e.key == "Enter" || e.keyCode === 9) {
+			this.setState({
+				toWho: e.target.value
+			});
+		}
+	}
+	
+	updateFrom(e) {
+		if(e.key == "Enter" || e.keyCode === 9) {
+			this.setState({
+				fromWho: e.target.value
+			});
+		}
+	}
+  
     render() {
       var asciistyle = {
+		background: "white",
         fontSize: 8,
         fontWeight: "bold",
         fontFamily: "monospace"
@@ -142,17 +109,80 @@
         |      *((##%%%&&&&&&&&&&&%&&&&@@@@@&&%###%(((((/***,*/(///(|<br/>
       </pre>;
 
+	
+	  var cardStyle = {
+	    background: this.state.background,
+		color: this.state.text,
+		width: 400,
+		padding: 10,
+		marginRight: 10,
+		border: "2px solid black"
+	  };
+
+	  var rowStyle = {
+		display:"flex",
+		flexDirection: "row",
+		marginBottom: 15
+	  };
+	  
+	  var bgColors = ["#e1f7d5", "#ffbdbd", "#c9c9ff", "#f1cbff", "#ffffff"];
+	  
+	  var colors = ["#4deeea", "#74ee15", "#ffe700", "#f000ff", "#001eff"];
+	  
+	  var bgButts = [];
+	  var coButts = [];
+	  
+	  //Populate buttons arrays
+	  for(var i = 0; i < bgColors.length; i++) {
+		var bgButtStyle = {
+			height : 25,
+			width : 25,
+			boxShadow: "0px 0px 5px 2px grey",
+			margin : "5px",
+			backgroundColor : bgColors[i]
+		};
+		bgButts.push(<button style={bgButtStyle} onClick={this.changeBackground} value={bgColors[i]}></button>);
+		var coButtStyle = {
+			height : 25,
+			width : 25,
+			boxShadow: "0px 0px 5px 2px grey",
+			margin : "5px",
+			backgroundColor : colors[i]
+		};
+		coButts.push(<button style={coButtStyle} onClick={this.changeText}  value={colors[i]}></button>);
+	  }
+	  
       return (
-	       <div>
-          {ascii}
-	       </div>
+	    <div style={rowStyle}>
+	      <div style={cardStyle}>
+		    <p>To {this.state.toWho}</p>
+            <div>{ascii}</div>
+			<p>so you just gonna bring me a birthday gift on my birthday to my birthday party on my birthday with a birthday gift</p>
+			<p>From {this.state.fromWho}</p>
+	      </div>
+		  <div>
+		    <form>
+			  <div style={rowStyle}>To:<input onKeyDown={this.updateTo} placeholder={this.state.toWho}></input></div>
+			  <div style={rowStyle}>From:<input onKeyDown={this.updateFrom} placeholder={this.state.fromWho}></input></div>
+			</form>
+			Select background color:
+			<div style={rowStyle}>
+			{bgButts}
+			</div>
+			Select text color:
+			<div style={rowStyle}>
+		    {coButts}
+			</div>
+		  </div>
+		</div>
       );
     }
   }
 
   ReactDOM.render(
     <div>
-      <Ascii bgColor="#F9C240" />
+	  <h1>Cool Custom Card Craft Creations</h1>
+      <CardCreator/>
     </div>,
     document.querySelector("#container")
   );
